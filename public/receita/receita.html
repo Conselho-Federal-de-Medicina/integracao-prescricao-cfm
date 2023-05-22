@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://prescricao-dev.cfm.org.br/consulta-documento/receita-simples/new -->
+<html class="no-js kagahkocm idc0_347" lang="pt-br" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prescrição Eletrônica - CFM</title>
+    <base href=".">
+    <link rel="icon" href="https://prescricao.cfm.org.br/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/global.css">
+    <link rel="stylesheet" href="assets/receita.css">
+</head>
+
+<body class="" style="">
+    <main _ngcontent-wxb-c254="" class="ml-sm-auto main-espaco-sidebar col-md-12 col-lg-12">
+        <jhi-consulta-documento-update _nghost-wxb-c263="" class="ng-star-inserted">
+            <jhi-prescricao-pagina-documento titulo="Receituário Simples">
+
+                <div _ngcontent-wxb-c158="" class="modal-border-form">
+                    <h6 _ngcontent-wxb-c158="" class="receita-title">
+                        Receituário Simples
+                    </h6>
+                    <hr _ngcontent-wxb-c158="">
+
+                    <jhi-prescricao-seletor-modelo-documento >
+                        <div _ngcontent-wxb-c159="" class="display-flex ng-star-inserted">
+
+                            <button _ngcontent-wxb-c159="" class="btn btn-save margin-left-auto">
+                                Salvar como Modelo
+                            </button>
+
+                            <select _ngcontent-wxb-c159="" class="margin-left-2 form-control dropdown-modelo">
+                                <option _ngcontent-wxb-c159="" selected="selected">
+                                    Selecionar Modelo
+                                </option>
+                            </select>
+                        </div>
+                    </jhi-prescricao-seletor-modelo-documento>
+
+                    <form _ngcontent-wxb-c263="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                        <jhi-prescricao-seletor-paciente _ngcontent-wxb-c263="" titulo="Dados do Paciente">
+                            <p _ngcontent-wxb-c160="" class="form-topic ng-star-inserted">
+                                Dados do Paciente
+                            </p>
+
+                            <jhi-busca-autocomplete _ngcontent-wxb-c160="">
+                                <div _ngcontent-wxb-c155="" class="display-flex flex-wrap">
+                                    <div _ngcontent-wxb-c155="" class="display-flex align-items-center padding-2 ng-star-inserted">
+                                        Prescrevo a(o)&nbsp;Sr(a)
+                                    </div>
+
+                                    <div _ngcontent-wxb-c155="" class="padding-2 tamanho-autocomplete">
+                                        <small _ngcontent-wxb-c155="" class="text-muted label-opcoes ng-star-inserted">
+                                            CPF ou Nome Completo do Paciente
+                                            <strong _ngcontent-wxb-c155="" class="obrigatorio ng-star-inserted">*</strong>
+                                        </small>
+
+                                        <ng-autocomplete _ngcontent-wxb-c155="" class="ng-autocomplete custom-autocomplete busca-opcoes ng-valid ng-touched ng-dirty">
+                                            <div class="autocomplete-container">
+                                                <div class="input-container">
+                                                    <input type="text" autocomplete="off"
+                                                           id="nome_paciente"
+                                                           placeholder="Informe CPF ou Nome do paciente">
+                                                </div>
+                                            </div>
+                                        </ng-autocomplete>
+                                    </div>
+
+                                    <div _ngcontent-wxb-c155="" class="botao-adicao">
+                                        <button _ngcontent-wxb-c155="" type="button" class="btn btn-save">+
+                                            Novo Paciente
+                                        </button>
+                                    </div>
+                                </div>
+                            </jhi-busca-autocomplete>
+                        </jhi-prescricao-seletor-paciente>
+
+                        <p _ngcontent-wxb-c263="" class="form-topic">Medicamentos</p>
+
+                        <jhi-formulario-medicamento _ngcontent-wxb-c263="" class="margin-bottom-2 display-block">
+                            <div _ngcontent-wxb-c152="" class="display-flex justify-content-end margin-bottom-2 ng-star-inserted">
+                                <button type="button" class="btn btn-save" onclick="toggleAdicionarMedicamento()">
+                                    Adicionar Medicamento
+                                </button>
+                            </div>
+
+                            <!-- CMF: Adicionar medicamento -->
+                            <div id="adicionar-medicamento" style="display: none">
+                            <jhi-prescricao-card _ngcontent-wxb-c152="" cordefundo="#ececec" class="display-block margin-bottom-2 ng-star-inserted" _nghost-wxb-c146="">
+                                <div _ngcontent-wxb-c146="" class="prescricao-card" style="background-color: rgb(236, 236, 236);">
+                                <div _ngcontent-wxb-c146="" class="padding-2 ng-star-inserted"><b _ngcontent-wxb-c146="">
+                                    Adicionando Medicamento
+                                </b></div>
+                                <hr _ngcontent-wxb-c146="" class="ng-star-inserted">
+
+                                <div _ngcontent-wxb-c146="" class="padding-2 flex-1 display-flex flex-direction-column">
+                                    <form _ngcontent-wxb-c152="" novalidate="" class="ng-invalid ng-dirty ng-touched">
+                                        <div _ngcontent-wxb-c152="" class="display-flex align-items-center">
+                                            <input type="checkbox" name="manipulado" id="manipulado">
+                                            Medicamento manipulado
+                                        </div>
+
+                                        <div _ngcontent-wxb-c152="" class="display-flex flex-wrap">
+                                            <div _ngcontent-wxb-c152="" class="padding-2 flex-2">
+                                                <div _ngcontent-wxb-c152="">
+                                                    Nome do medicamento/fórmula/substância prescrito(a) (DCB)
+                                                    <strong _ngcontent-wxb-c152="" class="texto-vermelho">*</strong>
+                                                </div>
+                                                <ng-autocomplete _ngcontent-wxb-c152="" formcontrolname="nome" placeholder="Nome do medicamento ou substância" class="ng-autocomplete custom-autocomplete nome-medicamento">
+                                                    <div class="autocomplete-container">
+                                                    <div class="input-container">
+                                                        <input id="adicionar_medicamento_nome" type="text" autocomplete="off" placeholder="Nome do medicamento ou substância">
+                                                    </div>
+                                                    </div>
+                                                </ng-autocomplete>
+                                            </div>
+
+                                            <div _ngcontent-wxb-c152="" class="padding-2 flex-1 ng-star-inserted">
+                                                <div _ngcontent-wxb-c152="">
+                                                    Dosagem/Concentração
+                                                </div>
+                                                <input id="adicionar_medicamento_concentracao" _ngcontent-wxb-c152="" type="text" formcontrolname="concentracao" maxlength="150" class="width-100 ng-untouched ng-pristine ng-valid">
+                                            </div>
+
+                                            <div _ngcontent-wxb-c152="" class="padding-2 flex-1 ng-star-inserted">
+                                                <div _ngcontent-wxb-c152="">
+                                                    Quantidade
+                                                    <strong _ngcontent-wxb-c152="" class="texto-vermelho">*</strong></div>
+                                                <input id="adicionar_medicamento_quantidade" _ngcontent-wxb-c152="" type="text" formcontrolname="quantidade" maxlength="150" class="width-100 ng-untouched ng-pristine ng-invalid">
+                                            </div>
+                                        </div>
+
+                                        <div _ngcontent-wxb-c152="" class="padding-2">
+                                            <div _ngcontent-wxb-c152="" class="ng-star-inserted">
+                                                Administração, posologia, duração do tratamento e outras informações
+                                            </div>
+                                            <ckeditor _ngcontent-wxb-c152="" formcontrolname="observacao" class="custom-ckeditor ng-untouched ng-pristine ng-valid" maxlength="1000">
+                                                <textarea id="adicionar_medicamento_informacoes" rows="5" style="width: 100%;"></textarea>
+                                            </ckeditor>
+                                            <div _ngcontent-wxb-c152="">0 de 1000 caracteres</div>
+                                        </div>
+
+                                        <div _ngcontent-wxb-c152="" class="display-flex padding-2 justify-content-end">
+                                            <button type="button" onclick="toggleAdicionarMedicamento()" _ngcontent-wxb-c152="" class="btn btn-outline padding-2">
+                                                Cancelar
+                                            </button>
+                                            <button type="reset" _ngcontent-wxb-c152="" class="btn btn-outline padding-2 margin-left-2 ng-star-inserted">
+                                                Limpar
+                                            </button>
+                                            <button type="button" onclick="adicionarMedicamento()" _ngcontent-wxb-c152="" class="btn btn-save padding-2 margin-left-2 ng-star-inserted">
+                                                Adicionar
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            </jhi-prescricao-card>
+                            </div>
+                        </jhi-formulario-medicamento>
+
+                        <jhi-lista-receitas _ngcontent-wxb-c263="">
+                            <div _ngcontent-wxb-c153="" class="container-listagem">
+                                <table _ngcontent-wxb-c153="" class="listagem-medicamentos">
+                                    <tr _ngcontent-wxb-c153="" class="cabecalhos">
+                                        <th _ngcontent-wxb-c153="">Medicamentos</th>
+                                        <th _ngcontent-wxb-c153="" class="cabecalho-acoes">Ações</th>
+                                    </tr>
+
+                                    <tr id="template_medicamento" style="display: none" _ngcontent-wxb-c153="" class="ng-star-inserted">
+                                        <td _ngcontent-wxb-c153="">
+                                            <div _ngcontent-wxb-c153="" class="container-descricao-rolavel">
+                                                <div _ngcontent-wxb-c153="" class="container-descricao">
+                                                    <jhi-descricao-medicamento _ngcontent-wxb-c153="">
+                                                        <span _ngcontent-wxb-c151="" class="resumo-medicamento">
+                                                            <span _ngcontent-wxb-c151="" class="template_medicamento_nome nome-medicamento">
+                                                                Medicamento 1
+                                                            </span>
+                                                            <span _ngcontent-wxb-c151="" class="concentracao-quantidade especificacoes-medicamento ng-star-inserted">
+                                                                <span class="template_medicamento_concentracao">
+                                                                    10mg
+                                                                </span>
+                                                                <span _ngcontent-wxb-c151="" class="tracejado"></span>
+                                                                <span class="template_medicamento_quantidade">
+                                                                    10
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <div _ngcontent-wxb-c151="" class="especificacoes-medicamento observacoes-medicamento">
+                                                            <span _ngcontent-wxb-c151="" class="previa-ckeditor-observacao-medicamento">
+                                                                <p class="template_medicamento_informacoes">
+                                                                    Administrar da forma 1.
+                                                                </p>
+                                                            </span>
+                                                        </div>
+                                                    </jhi-descricao-medicamento>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td _ngcontent-wxb-c153="">
+                                            <button _ngcontent-wxb-c153="" class="btn btn-outline" title="Editar">
+                                                <span class="material-icons">edit</span>
+                                            </button>
+                                            <button _ngcontent-wxb-c153="" class="btn btn-outline" title="Excluir">
+                                                <span class="material-icons">delete</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </jhi-lista-receitas>
+
+                        <jhi-prescricao-seletor-local-atendimento _ngcontent-wxb-c263="">
+                            <p _ngcontent-wxb-c161="" class="form-topic">
+                                Local de Atendimento
+                            </p>
+
+                            <jhi-busca-autocomplete _ngcontent-wxb-c161="">
+                                <div _ngcontent-wxb-c155="" class="display-flex flex-wrap">
+                                    <div _ngcontent-wxb-c155="" class="display-flex align-items-center padding-2 ng-star-inserted">
+                                        Nome do Local de Atendimento:
+                                        <strong _ngcontent-wxb-c155="" class="obrigatorio ng-star-inserted">*</strong>
+                                    </div>
+
+                                    <div _ngcontent-wxb-c155="" class="padding-2 tamanho-autocomplete">
+                                        <ng-autocomplete _ngcontent-wxb-c155="">
+                                            <div class="autocomplete-container">
+                                                <div class="input-container">
+                                                    <input type="text" autocomplete="off"
+                                                           id="nome_local"
+                                                           placeholder="Informe o local de atendimento">
+                                                </div>
+                                            </div>
+                                        </ng-autocomplete>
+                                    </div>
+
+                                    <div _ngcontent-wxb-c155="" class="botao-adicao">
+                                        <button _ngcontent-wxb-c155="" type="button" class="btn btn-save">+
+                                            Novo Local de Atendimento
+                                        </button>
+                                    </div>
+                                </div>
+                            </jhi-busca-autocomplete>
+
+                            <p _ngcontent-wxb-c263="" class="form-topic ng-star-inserted">
+                                Especialização RQE
+                            </p>
+                            <div _ngcontent-wxb-c263="" class="ng-star-inserted">
+                                Selecione até duas especialidades:
+                            </div>
+
+                            <jhi-seletor-especialidade _ngcontent-wxb-c263="">
+                                <div _ngcontent-wxb-c156="" class="col-md-12 ng-star-inserted"
+                                     style="padding: 0;">
+
+                                    <div _ngcontent-wxb-c156="" title="" class="ng-star-inserted">
+                                        <input _ngcontent-wxb-c156="" type="checkbox"
+                                               placeholder="Especialidades médicas"
+                                               class="checkbox-especialidades">
+                                        <label _ngcontent-wxb-c156="" style="margin: 0;">
+                                            <p _ngcontent-wxb-c156="" style="margin: 5px;">
+                                                ESPECIALIDADE 1
+                                            </p>
+                                        </label>
+                                    </div>
+
+                                    <div _ngcontent-wxb-c156="" title="" class="ng-star-inserted">
+                                        <input _ngcontent-wxb-c156="" type="checkbox"
+                                               placeholder="Especialidades médicas"
+                                               class="checkbox-especialidades">
+                                        <label _ngcontent-wxb-c156="" style="margin: 0;">
+                                            <p _ngcontent-wxb-c156="" style="margin: 5px;">
+                                                ESPECIALIDADE 2
+                                            </p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </jhi-seletor-especialidade>
+                        </jhi-prescricao-seletor-local-atendimento>
+                    </form>
+
+                </div>
+            </jhi-prescricao-pagina-documento>
+            <div _ngcontent-wxb-c263="" class="texto-vermelho padding-2"><b _ngcontent-wxb-c263="">* Campos obrigatórios</b></div>
+
+            <div _ngcontent-wxb-c263="" class="display-flex justify-content-end margin-bottom-2">
+                <button onclick="enviarCancelar()" _ngcontent-wxb-c263="" class="btn btn-outline margin-left-2">
+                    Cancelar
+                </button>
+                <button _ngcontent-wxb-c263="" class="btn btn-save margin-left-2">
+                    Visualizar
+                </button>
+                <button onclick="enviarAssinar()" _ngcontent-wxb-c263="" class="btn btn-save margin-left-2">
+                    Salvar e Assinar
+                </button>
+            </div>
+
+        </jhi-consulta-documento-update><!--container-->
+    </main>
+    </jhi-main>
+
+    <script src="../prescricao-cfm-lib.js"></script>
+    <script src="receita.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Created by https://www.toptal.com/developers/gitignore/api/webstorm,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,visualstudiocode
+
+### VisualStudioCode ###
+.vscode/
+.history/
+*.vsix
+
+### WebStorm ###
+.idea/
+out/
+.idea_modules/
+*.iws
+ *.iml
+
+# End of https://www.toptal.com/developers/gitignore/api/webstorm,visualstudiocode

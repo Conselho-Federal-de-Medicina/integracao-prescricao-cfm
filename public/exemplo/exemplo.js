@@ -20,7 +20,7 @@ var medicamentos = [
     null
 ];
 
-var integracaoPrescricao = new CfmIntegracaoPrescricao(CfmAmbiente.LOCAL);
+var integracaoPrescricao = new CfmIntegracaoPrescricao(CfmAmbiente.SIMULACAO);
 
 async function toggleIframe() {
     let parent = $('#divParent');

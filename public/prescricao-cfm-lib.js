@@ -352,16 +352,12 @@ class CfmIntegracaoPrescricao {
             this.iframe.setAttribute('height', '100%');
             this.iframe.setAttribute('frameborder', '0');
             this.iframe.setAttribute('src', this.ambiente.paginaPrescricao.url);
-            // adiciona o iframe no DOM (vai iniciar o carregamento)
-            parent.appendChild(this.iframe);
             // resolve a promise quando a janela terminar de carregar
-            this.iframe.contentWindow.addEventListener('load', event => {
+            this.iframe.addEventListener('load', event => {
                 resolve();
             });
-            // mas se a janela carregou antes de adicionarmos o listener, resolve a promise agora
-            if (this.iframe.contentWindow._cfmIsLoaded) {
-                resolve();
-            }
+            // adiciona o iframe no DOM (vai iniciar o carregamento)
+            parent.appendChild(this.iframe);
         });
     }
 
@@ -391,14 +387,8 @@ class CfmIntegracaoPrescricao {
         return new Promise((resolve, reject) => {
             // cria a aba
             this.aba = window.open(this.ambiente.paginaPrescricao.url, this.nomeAba, windowFeatures);
-            // resolve a promise quando a janela terminar de carregar
-            this.aba.addEventListener('load', event => {
-                resolve();
-            });
-            // mas se a janela carregou antes de adicionarmos o listener, resolve a promise agora
-            if (this.aba._cfmIsLoaded) {
-                resolve();
-            }
+            // TODO: detectar que a aba terminou de carregar usando postMessage e setInterval
+            setTimeout(resolve, 1000);
         });
     }
 

@@ -9,12 +9,12 @@ class CfmAmbiente {
     /** Executando localmente na máquina do desenvolvedor. */
     static LOCAL = new CfmAmbiente('LOCAL',
         ['https://ts4cr4lk4ldiphrbpqrr46hnsu0dheji.lambda-url.us-east-1.on.aws', '/'],
-        ['http://localhost:63342', '/poc-prescricao-iframe/public/receita/receita.html']);
+        ['http://localhost:63342', '/integracao-prescricao-cfm/public/receita/receita.html']);
 
     /** Executar apontando para o ambiente de simulação (sem backend real). */
     static SIMULACAO = new CfmAmbiente('SIMULACAO',
         ['https://ts4cr4lk4ldiphrbpqrr46hnsu0dheji.lambda-url.us-east-1.on.aws', '/'],
-        ['???', '/poc-prescricao-iframe/public/receita/receita.html']);
+        ['https://conselho-federal-de-medicina.github.io', '/integracao-prescricao-cfm/public/receita/receita.html']);
 
     /** Executar apontando para o ambiente de homologação (solicitar credenciais ao CFM). */
     static HOMOLOGACAO = new CfmAmbiente('HOMOLOGACAO',

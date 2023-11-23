@@ -1,7 +1,14 @@
 // Sistema de exemplo para mostrar como funciona a integração com a Prescrição Eletrônica do Conselho Federal de Medicina.
 // Copyright (C) 2023 CFM.
 
-import {CfmAmbiente, CfmIntegracaoPrescricao, CfmLocalAtendimento, CfmMedicamento, CfmPaciente} from "../bundle.js";
+import {
+    CfmAmbiente,
+    CfmIntegracaoPrescricao,
+    CfmLocalAtendimento,
+    CfmMedicamento,
+    CfmPaciente,
+    CfmTipoDocumento
+} from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.0/dist/bundle.js";
 
 var locaisAtendimento = [
     new CfmLocalAtendimento(1, null, 'Sistema Saúde+'),
@@ -81,3 +88,4 @@ async function sendMessage() {
     }
 }
 
+$('iframeBtn').click(toggleIframe());

@@ -2,6 +2,9 @@
 
 Biblioteca para integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil.
 
+- [Apresentação da integração](https://conselho-federal-de-medicina.github.io/integracao-prescricao-cfm/apresentacao/Integracao_com_a_Prescricao_Eletronica_do_CFM.pptx)
+- [Sistema de exemplo](https://conselho-federal-de-medicina.github.io/integracao-prescricao-cfm/exemplo/exemplo.html)
+
 ## Como usar?
 
 ### Opção A - Se você usa NPM (ou equivalente) e a sintaxe de módulos do ES6.

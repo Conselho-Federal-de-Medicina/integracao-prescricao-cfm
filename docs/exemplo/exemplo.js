@@ -1,6 +1,8 @@
 // Sistema de exemplo para mostrar como funciona a integração com a Prescrição Eletrônica do Conselho Federal de Medicina.
 // Copyright (C) 2023 CFM.
 
+import {CfmAmbiente, CfmIntegracaoPrescricao, CfmLocalAtendimento, CfmMedicamento, CfmPaciente} from "../bundle.js";
+
 var locaisAtendimento = [
     new CfmLocalAtendimento(1, null, 'Sistema Saúde+'),
     new CfmLocalAtendimento(2, null, 'Hospital Santa Casa'),

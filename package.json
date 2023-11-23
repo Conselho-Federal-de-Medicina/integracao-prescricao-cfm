@@ -1,0 +1,52 @@
+{
+  "name": "@conselho-federal-de-medicina/integracao-prescricao-cfm",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Biblioteca de integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/bundle.iife.js",
+  "module": "./dist/bundle.js",
+  "exports": {
+    ".": {
+      "import": "./dist/bundle.js",
+      "require": "./dist/bundle.iife.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conselho-Federal-de-Medicina/integracao-prescricao-cfm.git"
+  },
+  "keywords": [
+    "cfm",
+    "conselho",
+    "federal",
+    "medicina",
+    "integração",
+    "prescrição",
+    "eletrônica",
+    "médicos",
+    "receitas",
+    "receituários"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Conselho-Federal-de-Medicina/integracao-prescricao-cfm/issues"
+  },
+  "homepage": "https://github.com/Conselho-Federal-de-Medicina/integracao-prescricao-cfm#readme",
+  "devDependencies": {
+    "@vitest/browser": "^0.34.6",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vite-plugin-dts": "^3.6.3",
+    "vitest": "^0.34.6",
+    "webdriverio": "^8.23.5"
+  }
+}

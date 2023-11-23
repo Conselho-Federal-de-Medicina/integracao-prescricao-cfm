@@ -7,6 +7,8 @@ import {
     CfmLocalAtendimento,
     CfmMedicamento,
     CfmPaciente,
+    CfmPrescricao,
+    CfmRequestMessage,
     CfmTipoDocumento
 } from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.0/dist/bundle.js";
 
@@ -49,19 +51,19 @@ async function toggleModal() {
 }
 
 async function toggleAba() {
-    await integracaoPrescricao.criarAba();
+    await integracaoPrescricao.criarPopup(CfmTipoDocumento.RECEITA_SIMPLES);
     sendMessage();
 }
 
 async function togglePopup() {
-    await integracaoPrescricao.criarAba(CfmTipoDocumento.RECEITA_SIMPLES, 'popup,width=1000,height=1010');
+    await integracaoPrescricao.criarPopup(CfmTipoDocumento.RECEITA_SIMPLES, 'popup,width=1000,height=1010');
     sendMessage();
 }
 
 function fecharJanela() {
     $('#divParent').slideUp();
     $('#modalParent').modal('hide');
-    integracaoPrescricao.destruirAba();
+    integracaoPrescricao.destruirPopup();
     integracaoPrescricao.destruirIframe();
 }
 
@@ -88,4 +90,7 @@ async function sendMessage() {
     }
 }
 
-$('iframeBtn').click(toggleIframe());
+$('#iframeBtn').on('click', toggleIframe);
+$('#modalBtn').on('click', toggleModal);
+$('#abaBtn').on('click', toggleAba);
+$('#popupBtn').on('click', togglePopup);

@@ -55,16 +55,17 @@ function enviarResposta(resposta) {
 }
 
 function enviarCancelar() {
-    enviarResposta(new CfmResponseMessage(
-        CfmTipoResposta.ERRO_USUARIO_CANCELOU,
-        null,
-        'Usuário apertou o botão cancelar'));
+    enviarResposta({
+        tipo: {nome: 'ERRO_USUARIO_CANCELOU'},
+        mensagemErro: 'Usuário apertou o botão cancelar'
+    });
 }
 
 function enviarAssinar() {
-    enviarResposta(new CfmResponseMessage(
-        CfmTipoResposta.SUCESSO,
-        new URL('assets/pdf_de_sucesso.pdf', document.baseURI).href));
+    enviarResposta({
+        tipo: {nome: 'SUCESSO'},
+        urlDocumento: new URL('assets/pdf_de_sucesso.pdf', document.baseURI).href
+    });
 }
 
 window.addEventListener("message", function(event) {
@@ -72,14 +73,20 @@ window.addEventListener("message", function(event) {
     console.log(event);
     // mensagem de requisição
     let request = event.data;
-    if (!request instanceof CfmRequestMessage) {
-        enviarResposta(new CfmResponseMessage(CfmTipoResposta.ERRO_INTEGRACAO, null, "A mensagem enviada não é do tipo CfmRequestMessage"));
+    if (!request.prescricao) {
+        enviarResposta({
+            tipo: {nome: 'ERRO_INTEGRACAO'},
+            mensagemErro: "A mensagem enviada não é do tipo CfmRequestMessage"
+        });
         return;
     }
     // token de acesso
     let accessToken = request.accessToken;
     if (accessToken !== 'IntegracaoPrescricaoEletronicaCfmAccessTokenBase64') {
-        enviarResposta(new CfmResponseMessage(CfmTipoResposta.ERRO_AUTENTICACAO, null, "O access token enviado é inválido"));
+        enviarResposta({
+            tipo: 'ERRO_AUTENTICACAO',
+            mensagemErro: "O access token enviado é inválido"
+        });
         return;
     }
     // source/opener window

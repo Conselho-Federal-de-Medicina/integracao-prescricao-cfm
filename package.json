@@ -1,6 +1,6 @@
 {
   "name": "@conselho-federal-de-medicina/integracao-prescricao-cfm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "private": false,
   "description": "Biblioteca de integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil",

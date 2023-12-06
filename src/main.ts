@@ -29,7 +29,7 @@ export class CfmAmbiente {
     static readonly PRODUCAO = new CfmAmbiente('PRODUCAO',
         new UrlParts('???', '???'));
 
-    private constructor(
+    public constructor(
         readonly nomeAmbiente: string,
         readonly paginaPrescricao: UrlParts) {}
 

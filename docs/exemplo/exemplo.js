@@ -10,7 +10,7 @@ import {
     CfmPrescricao,
     CfmRequestMessage,
     CfmTipoDocumento
-} from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.0/dist/bundle.js";
+} from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.3/dist/main.js";
 
 var locaisAtendimento = [
     new CfmLocalAtendimento(1, null, 'Sistema Saúde+'),

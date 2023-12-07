@@ -8,7 +8,7 @@ export default defineConfig({
         lib: {
             entry: resolve(__dirname, 'src/main.ts'),
             name: 'integracaoPrescricaoCfm',
-            fileName: 'bundle',
+            fileName: 'main',
             formats: ['es', 'iife']
         },
         sourcemap: true

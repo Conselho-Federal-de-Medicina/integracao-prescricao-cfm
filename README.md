@@ -96,7 +96,7 @@ console.log(resposta.urlDocumento);
 1. Importe a versão compatível com ES5 da nossa biblioteca em seu `index.html`.
 
 ```html
-<script src="https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm></script>"
+<script src="https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm"></script>
 ```
 
 **OBSERVAÇÃO**: Essa opção usa a sintaxe [IIFE](https://developer.mozilla.org/pt-BR/docs/Glossary/IIFE)

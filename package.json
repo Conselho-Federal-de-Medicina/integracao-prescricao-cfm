@@ -1,18 +1,17 @@
 {
   "name": "@conselho-federal-de-medicina/integracao-prescricao-cfm",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "private": false,
   "description": "Biblioteca de integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil",
   "files": [
     "dist"
   ],
-  "main": "./dist/main.iife.js",
-  "module": "./dist/main.js",
+  "main": "./dist/main.js",
   "exports": {
     ".": {
       "import": "./dist/main.js",
-      "require": "./dist/main.iife.js"
+      "default": "./dist/main.iife.js"
     }
   },
   "scripts": {

@@ -1,7 +1,7 @@
 // Biblioteca de integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil.
 // Copyright (C) 2023 CFM.
 
-class UrlParts {
+export class UrlParts {
     readonly url: string;
     constructor(readonly origin: string, readonly path: string) {
         this.url = origin + path;

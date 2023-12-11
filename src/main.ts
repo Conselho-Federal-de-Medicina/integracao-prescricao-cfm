@@ -54,7 +54,7 @@ export class CfmTipoDocumento {
 /**
  * Tipos de resposta enviados pela janela da Prescrição.
  */
-class CfmTipoResposta {
+export class CfmTipoResposta {
 
     /** O documento foi assinado com sucesso. */
     static readonly SUCESSO = new CfmTipoResposta('SUCESSO');
@@ -410,4 +410,3 @@ export class CfmIntegracaoPrescricao {
         }
     }
 }
-

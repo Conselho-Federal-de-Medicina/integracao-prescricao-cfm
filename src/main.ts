@@ -23,7 +23,7 @@ export class CfmAmbiente {
 
     /** Executar apontando para o ambiente de homologação (solicitar credenciais ao CFM). */
     static readonly HOMOLOGACAO = new CfmAmbiente('HOMOLOGACAO',
-        new UrlParts('???', '???'));
+        new UrlParts('https://prescricao-hom.cfm.org.br', '/consulta-documento/prescricao-iframe'));
 
     /** Executar apontando para o ambiente de produção (solicitar credenciais ao CFM). */
     static readonly PRODUCAO = new CfmAmbiente('PRODUCAO',

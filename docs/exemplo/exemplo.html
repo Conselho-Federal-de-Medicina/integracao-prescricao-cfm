@@ -16,6 +16,27 @@
                 <h1 class="text-center" style="margin-bottom: 1em">Exemplo de integração com a Prescrição Eletrônica do CFM</h1>
             </div>
         </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary float-right" type="button" id="menuBtn" data-toggle="dropdown">...</button>
+            <div class="dropdown-menu">
+                <form action="#" class="p-2">
+                    <div class="form-group">
+                        <label for="nome_ambiente">Ambiente:</label>
+                        <select name="nome_ambiente" id="nome_ambiente" class="form-control">
+                            <option value="SIMULACAO">Simulação</option>
+                            <option value="HOMOLOGACAO">Homologação</option>
+                            <option value="PRODUCAO">Produção</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor_token">Token:</label>
+                        <input type="text" name="valor_token" id="valor_token" class="form-control">
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col">
                 <p>Esta página é uma demonstração das formas de integração com o sistema de

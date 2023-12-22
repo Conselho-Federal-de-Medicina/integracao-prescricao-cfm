@@ -10,7 +10,7 @@ import {
     CfmPrescricao,
     CfmRequestMessage,
     CfmTipoDocumento
-} from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.5/dist/main.js";
+} from "https://unpkg.com/@conselho-federal-de-medicina/integracao-prescricao-cfm@0.1.7/dist/main.js";
 
 var locaisAtendimento = [
     new CfmLocalAtendimento(1, null, 'Sistema Saúde+'),
@@ -32,6 +32,8 @@ var medicamentos = [
 ];
 
 var integracaoPrescricao = new CfmIntegracaoPrescricao(CfmAmbiente.SIMULACAO);
+
+var accessToken = 'IntegracaoPrescricaoEletronicaCfmAccessTokenBase64';
 
 async function toggleIframe() {
     let parent = $('#divParent');
@@ -74,7 +76,7 @@ async function sendMessage() {
         let medicamento1 = medicamentos[$('#medicamento_1').val()];
         let medicamento2 = medicamentos[$('#medicamento_2').val()];
         let medicamento3 = medicamentos[$('#medicamento_3').val()];
-        let accessToken = 'IntegracaoPrescricaoEletronicaCfmAccessTokenBase64';
+        //let accessToken = getTokenFromBackend();
         let prescricao = new CfmPrescricao(localAtendimento, paciente, [medicamento1, medicamento2, medicamento3]);
         let requisicao = new CfmRequestMessage(accessToken, prescricao);
         let resposta = await integracaoPrescricao.enviarPrescricao(requisicao);
@@ -90,7 +92,27 @@ async function sendMessage() {
     }
 }
 
+function setAmbiente(event) {
+    switch (event.target.value) {
+        case 'SIMULACAO':
+            integracaoPrescricao.ambiente = CfmAmbiente.SIMULACAO;
+            break;
+        case 'HOMOLOGACAO':
+            integracaoPrescricao.ambiente = CfmAmbiente.HOMOLOGACAO;
+            break;
+        case 'PRODUCAO':
+            integracaoPrescricao.ambiente = CfmAmbiente.PRODUCAO;
+            break;
+    }
+}
+
+function setToken(event) {
+    accessToken = event.target.value;
+}
+
 $('#iframeBtn').on('click', toggleIframe);
 $('#modalBtn').on('click', toggleModal);
 $('#abaBtn').on('click', toggleAba);
 $('#popupBtn').on('click', togglePopup);
+$('#nome_ambiente').on('change', setAmbiente);
+$('#valor_token').on('change', setToken);

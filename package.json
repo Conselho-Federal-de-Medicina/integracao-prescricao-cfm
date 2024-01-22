@@ -1,6 +1,6 @@
 {
   "name": "@conselho-federal-de-medicina/integracao-prescricao-cfm",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "private": false,
   "description": "Biblioteca de integração com o sistema de Prescrição Eletrônica do Conselho Federal de Medicina do Brasil",
@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest run",
     "build": "tsc && vite build"
   },
   "repository": {
@@ -41,12 +41,12 @@
   },
   "homepage": "https://github.com/Conselho-Federal-de-Medicina/integracao-prescricao-cfm#readme",
   "devDependencies": {
-    "@vitest/browser": "^0.34.6",
+    "@vitest/browser": "^1.2.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.2",
     "vite": "^5.0.2",
     "vite-plugin-dts": "^3.6.3",
-    "vitest": "^0.34.6",
+    "vitest": "^1.2.1",
     "webdriverio": "^8.23.5"
   }
 }

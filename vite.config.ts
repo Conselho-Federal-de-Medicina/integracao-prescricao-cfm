@@ -17,7 +17,8 @@ export default defineConfig({
     test: {
         browser: {
             enabled: true,
-            name: 'chrome'
+            name: 'edge',
+            headless: true
         }
     }
 });
